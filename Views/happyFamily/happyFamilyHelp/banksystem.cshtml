@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "银行系统";
+}
+
+<h2>银行系统</h2>
+
+
+
+<style type="text/css">
+    #container {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<html>
+
+
+<script type="text/javascript">
+function MM_jumpMenuGo(objId,targ,restore){ //v9.0
+  var selObj = null;  with (document) {
+  if (getElementById) selObj = getElementById(objId);
+  if (selObj) eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0; }
+}
+</script>
+<head>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #mainContainer {
+            height: 100%;
+            width: 100%;
+        }
+
+        #tltle {
+            height: 15%;
+            width: 100%;
+        }
+
+        #option {
+            float: left;
+            height: 85%;
+            width: 15%;
+        }
+
+        #content {
+            float: right;
+            height: 85%;
+            width: 85%;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .div {
+            margin: 0 auto;
+            width: 400px;
+            height: 100px;
+            border: 1px solid #F00;
+        }
+        /* css注释：为了观察效果设置宽度 边框 高度等样式 */
+    </style>
+
+
+
+
+</head>
+<body>
+    <div id="mainContainer">
+        <!--   标题    -->
+        <div id="tltle">
+
+            <form name="form" id="form">
+                我要查看
+                <select name="jumpMenu" id="jumpMenu">
+                    <option value="~/Help/HelpArchitecture">全家乐建筑</option>
+                    <option value="~/Help/HelpBreed">全家乐养殖</option>
+                    <option value="~/Help/HelpSystem">全家乐系统</option>
+                </select>
+                <input type="button" name="go_button" id="go_button" value="确定" onclick="MM_jumpMenuGo('jumpMenu','parent',1)" />
+            </form>
+        </div>
+        <!--   标题END    -->
+        <!--   选项    -->
+        <div id="option">
+
+
+            <ul>
+                <li class="active"><a href="~/Help/shopsystem">商城系统</a></li>
+                <br>
+                <li><a href="~/Help/mysystem">个人信息</a></li>
+                <br>
+                <li><a href="~/Help/exchangesystem">兑换系统</a></li>
+                <br>
+                <li><a href="~/Help/tasksystem">任务系统</a></li>
+                <br>
+                <li><a href="~/Help/banksystem">银行系统</a></li>
+                <br>
+                <li><a href="~/Help/stallsystem">地摊系统</a></li>
+                <br>
+                <li><a href="~/Help/friendsystem">好友系统</a></li>
+                <br>
+                <li><a href="~/Help/noticesystem">通知系统</a></li>
+                <br>
+                <li><a href="~/Help/lovesystem">爱情广场</a></li>
+                <br>
+                <li><a href="~/Help/interactionsystem">互动系统</a></li>
+                <br>
+                <li><a href="~/Help/setup">设置</a></li>
+                <br>
+            </ul>
+
+
+        </div>
+
+        <!--   选项END    -->
+        <!--   内容    -->
+        <div id="content">
+
+
+
+
+
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+            <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>银行系统</title>
+            </head>
+
+            <style>
+                .divcss5 {
+                    text-align: center;
+                }
+            </style>
+
+
+            <div class="divcss5">
+                <b><p>玩家可以通过银行系统来存储金币，在银行中的金币，还可以在全家乐系列的其他游戏中使用。</p></b>
+
+                <img src="../Content/Help/images/yhxt.jpg">
+
+                <body>
+                </body>
+        </html>
+
+
+
+
+
+
+    </div>
+    <!--   内容END    -->
+
+
+</div>
+</body>
+</html>

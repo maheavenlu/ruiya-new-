@@ -1,0 +1,189 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/happyFamily/happyfamilyhelp.css" rel="stylesheet" />
+    <style>
+        /*.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}*/
+        
+    </style>
+
+    <!--脚本-->
+    <script>
+        //选择页面改变脚本
+        $(function () {
+
+            //选择标签
+            //alert(1);
+             $("#catnavi a").on("click",function () {
+
+                
+                //取到链接的class属性
+                 var requestParam = $(this).data("type");
+
+                 //把所有a的active除去
+                 $("#catnavi a").parent().attr("class", "");
+
+                 $(this).parent().attr("class", "active");
+                
+                //alert(requestParam);
+                //向服务器发送一个post请求,接收返回的数据处理
+                 $.post('/happyFamily/GetHelpData', { requestParam: requestParam }, function (Data) {
+                    
+                    $(".breadcrumb .active").text(Data.NavName);
+                    
+                    var str = "";
+                    //遍历数据构造li
+                    $.each(Data.ListData, function (i, v) {
+                        str += '<li class="txt-c">' +
+                    '<a href=' + v.InfoUrl + ' title="商店" target="_blank">' +
+                        '<img src="' + v.ImgUrl + '" alt=' + v.Name + ' width="180" height="147" class="list-thumb">' +
+                        '<p class="list-link">' + v.Name + '</p>' +
+                    '</a></li>';
+                    });
+
+                    //将列表存入
+                    $("#list").html(str);
+
+                });
+
+            });
+        });
+        function mixSearch() {
+            var okeyword = $("search-input");
+            var oForm = $("search-form");
+            //提交给百度，构造地址参数
+            oForm.action = "http://www.baidu.com/s";
+            okeyword.name = "wd";
+            oForm.method = "get";
+            oForm.target = "baiduFrame";
+            oForm.submit();
+            function $(id) {
+                return document.getElementById(id);
+            }
+        }
+        $(document).ready(function () {
+            $("#jieshao").each(function () {
+                var maxwidth = 65;
+                if ($(this).text().length > maxwidth) {
+                    $(this).text($(this).text().substring(0, maxwidth));
+                    $(this).html($(this).html() + '…');
+                }
+            });
+            $(".navcation2").mouseover(function () {
+                $("#jianjie").show();
+            })
+            $(".navcation2").mouseout(function () {
+                $("#jianjie").hide();
+            })
+        });
+    </script>
+</head>
+<body>
+
+    <!--头部分-->
+    <div class="header">
+        <div class="headerbox">
+            <div class="complogo">
+                <a href="/"><img src="~/Content/happyFamily/images/companylogo2_07.png"></a>
+            </div>
+            <dl class="shopgift">
+                <a href=""><dd class="shop">礼包</dd></a>
+                <a href=""><dd class="gift">商城</dd></a>
+            </dl>
+        </div>
+    </div>
+    <div class="header2">
+        <ul class="menu">
+            <li class="menu-1"><a href="/happyfamily" title="官网首页">官网首页</a></li>
+            <li class="menu-2"><a href="/happyfamily/moreactivity" title="热门活动">热门活动</a></li>
+            <li class="menu-3"><a href="/happyFamily/HelpIndex" title="游戏资料">游戏资料</a></li>
+            <li class="menu-4"><a href="/happyfamily/morestrategy" title="攻略合集">攻略合集</a></li>
+        </ul>
+        <div class="search">
+            <form id="search-form" method="post" onsubmit="return false" target="_blank">
+                <button type="submit" id="search-button" onclick="mixSearch();">search</button>
+                <input type="text" placeholder="搜索关键字" class="search-input" id="search-input">
+            </form>
+        </div>
+    </div>  
+    <div class="container-head">
+        <div class="contain">
+            <div class="nav">
+                <!--<img src="~/Content/images/580005_1_03.png" />-->
+               
+
+            </div>
+        </div>
+    </div>
+
+    <!--breadcrumb-->
+    <div class="container clear">
+        <ol class="breadcrumb f-left">
+            <li class="index"><span class="ficon ficon-home"></span><a href="/">瑞亚科技</a></li>
+            <li>&gt;</li>
+            <li><a href="/happyFamily">全家乐</a></li>
+            <li>&gt;</li>
+            @RenderSection("breadcrumb", true)
+        </ol>
+        
+    </div>
+
+    <!--系统选择列表栏-->
+    <div class="page-navi">
+        <div class="container clear">
+            <ul class="navi navi-col6" id="catnavi">
+                @RenderSection("pagenavi", true);
+
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+    <!--页脚部分-->
+    <div class="foot foot-light">
+        <div class="container">
+            <div class="f-left foot-logos">
+                <img src="~/Content/happyFamily/images/companylogo_03.png" />
+            </div>
+            <div class="foot-cpright clear tool-tpline">
+                <ul class="f-right foot-links">
+                    <li>
+                        <span>健康游戏公告</span>
+                        <span class="foot-sprt">|</span> <span>抵制不良游戏</span> 
+                        <span class="foot-sprt">|</span> <span>拒绝盗版游戏</span> 
+                        <span class="foot-sprt">|</span> <span>谨防受骗上当</span>
+                        <span class="foot-sprt">|</span> <span>适度游戏益脑</span>
+                        <span class="foot-sprt">|</span> <span>沉迷游戏伤身</span>
+                        <span class="foot-sprt">|</span> <span>合理安排时间</span>
+                        <span class="foot-sprt">|</span> <span>享受健康生活</span>
+                    </li>
+                    <li class="f-right">
+                        <span>瑞亚科技版权所有</span>
+                    </li>
+                    <li>COPYRIGHT © 2016 RUIYA. ALL RIGHTS RESERVED</li>
+                    <li>
+                        <span> 浙B2-20150520</span>
+                        <span class="foot-sprt"> | </span><span>备案号:浙ICP备14028342号-3</span> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</body>
+</html>

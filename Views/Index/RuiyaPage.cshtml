@@ -1,0 +1,515 @@
+﻿@model IEnumerable<ruiya.Models.ruiya.RuiyaNews>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Description" content="瑞亚科技公司-游戏电子" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/footer.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.js" type="text/javascript"></script>
+    <!--<script src="~/Scripts/bootstrap.js" type="text/javascript"></script>-->
+    <title>RUIYA—瑞亚科技</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: "Microsoft YaHei";
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .box {
+            width: 100%;
+            position: relative;
+        }
+
+        .header {
+            height: 100px;
+            background: #0b5899;
+            position: relative;
+        }
+
+        .headlogo {
+            width: 200px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .logopic {
+            width: 250px;
+            height: 100px;
+            margin-left: 23px;
+            background: url("../Content/happyFamily/images/companylogo_03.png") no-repeat;
+            background-size: contain;
+        }
+
+        .logotxt {
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            color: #ffffff;
+            font-family: Forte;
+            cursor: pointer;
+            float: left;
+            margin-left: 30%;
+        }
+
+        .nav {
+            position: absolute;
+            top: 40px;
+            right: 50px;
+        }
+
+            .nav ul li {
+                float: left;
+                padding-left: 6px;
+                list-style: none;
+                width: 100px;
+            }
+
+                .nav ul li a {
+                    /*    margin-left: 30px;*/
+                    width: 100px;
+                    font-family: 'Microsoft YaHei';
+                    font-size: 16px;
+                    color: #f5f5f5;
+                    padding: 0px 2px;
+                    text-decoration: none;
+                    line-height: 20px;
+                    font-weight: 600;
+                }
+
+                    .nav ul li a:hover {
+                        background: #ffffff;
+                        border-radius: 5px;
+                        color: #0b5899;
+                    }
+
+        .navlist {
+            padding-top: 2px;
+            display: none;
+            z-index: 100;
+            width: 68px;
+            background-color: #0b5899;
+            color: #f5f5f5;
+            position: absolute;
+            border: 1px solid #6bbefc;
+        }
+
+            .navlist span {
+                border-bottom: 1px solid #0b5899;
+                width: 100%;
+            }
+
+                .navlist span:hover {
+                    background-color: #6bbefc;
+                }
+
+            .navlist .listbox a {
+                background-color: #0b5899;
+                width: 100%;
+                font-family: 'Microsoft YaHei';
+                font-size: 16px;
+                color: #f5f5f5;
+                padding: 0px 9px;
+                line-height: 0px;
+                font-weight: 400;
+            }
+
+                .navlist .listbox a:hover {
+                    background-color: #6bbefc;
+                    color: #f5f5f5;
+                    border-radius: 0px;
+                }
+
+        .navbox {
+            background: #f5f5f5;
+            height: 50px;
+            position: relative;
+        }
+
+        .banner {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            /*border:1px solid #a31e1e;*/
+            position: relative;
+        }
+
+        .conbox {
+            width: 500%;
+            height: 380px;
+            /*border:1px solid #003333;*/
+            position: absolute;
+        }
+
+            .conbox .bigpic {
+                float: left;
+                width: 20%;
+                height: 380px;
+                /*border: 1px solid #ff0000;*/
+            }
+
+                .conbox .bigpic a {
+                    width: 100%;
+                    height: 380px;
+                    display: block;
+                    /*border:5px solid #d91212;*/
+                    background-position: center;
+                }
+
+        /* .conbox .bigpic:nth-child(1) a {
+            background-image: url('../../Content/ruiya/images/mainpic.jpg');
+        }
+
+        .conbox .bigpic:nth-child(2) a {
+            background-image: url('../../Content/ruiya/images/mainpic2.jpg');
+        }
+
+        .conbox .bigpic:nth-child(3) a {
+            background-image: url('../../Content/ruiya/images/mainpic3.jpg');
+        }
+
+        .conbox .bigpic:nth-child(4) a {
+            background-image: url('../../Content/ruiya/images/mainpic4.jpg');
+        }
+
+        .conbox .bigpic:nth-child(5) a {
+            background-image: url('../../Content/ruiya/images/mainpic5.jpg');
+        }*/
+
+         .switcher {
+            position: absolute;
+            /*border:1px solid #ff0000;*/
+            width: 300px;
+            height: 10px;
+            bottom: 20px;
+            right: 30px;
+        }
+
+        .switcher a {
+            /*border:1px solid #ff0000;*/
+            padding: 2px 0px;
+            background: #ffffff;
+            margin-right: 7px;
+            width: 45px;
+            height: 7px;
+            float: left;
+        }
+
+            .switcher a.cur {
+                background: #414141;
+            }
+
+        .info {
+            width: 80%;
+            height: 300px;
+            margin: 50px auto;
+            background: #f5f5f5;
+            border-top: 3px solid #003333;
+            overflow: hidden;
+        }
+
+            .info div {
+                float: left;
+                width: 30%;
+                margin: 30px 1.5%;
+                display: block;
+                /*color:#999999;*/
+                /*border-top:3px solid #1B541C;*/
+            }
+
+                .info div p {
+                    font-size: 25px;
+                    color: #1B541C;
+                }
+
+                .info div span {
+                    font-size: 15px;
+                    font-family: "Microsoft YaHei";
+                    color: #999999;
+                    display: block;
+                }
+
+        .newstable {
+            margin-left: 20%;
+            margin-right: 20%;
+            height: auto;
+        }
+
+            .newstable .newstitle {
+                text-align: center;
+                border-top: 1px solid #333333;
+            }
+
+                .newstable .newstitle span {
+                    font-family: 微软雅黑;
+                    font-size: 32px;
+                    color: #1B541C;
+                }
+
+            .newstable .newstitle2 {
+                text-align: center;
+                height: 67px;
+            }
+
+                .newstable .newstitle2 span {
+                    font-family: 微软雅黑;
+                    font-size: 20px;
+                    color: #1B541C;
+                }
+
+            .newstable .box {
+                width: 100%;
+                height: 480px;
+            }
+
+                .newstable .box .newsdiv {
+                    float: left;
+                    margin-left: 2.5%;
+                    margin-top: 20px;
+                    width: 30%;
+                    height: 35%;
+                    overflow: hidden;
+                }
+
+                    .newstable .box .newsdiv .aa {
+                        margin-left: 1px;
+                        text-decoration: none;
+                        font-family: 微软雅黑;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                        .newstable .box .newsdiv .aa a {
+                            font-weight: 600;
+                            /*text-align:center;*/
+                            font-size: 18px;
+                            color: #1B541C;
+                        }
+
+                    .newstable .box .newsdiv .bb {
+                        margin-left: 1px;
+                        line-height: 2em;
+                        font-family: 微软雅黑;
+                        font-size: 14px;
+                        color: #999999;
+                        height: 52%;
+                        overflow: hidden;
+                    }
+
+                    .newstable .box .newsdiv .cc {
+                        font-family: 微软雅黑;
+                        font-size: 12px;
+                        color: #808080;
+                        float: right;
+                        margin-right: 4px;
+                    }
+    </style>
+</head>
+
+<body>
+    <div class="header box">
+        <div class="headlogo">
+            <div class="logopic"></div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li class="nav1"><a href="/" >瑞亚首页</a></li>
+                <li class="nav2"><a href="/infor" >公司信息</a></li>
+                <li class="nav3"><a>案例展示</a>
+                    <div class="navlist navlist3">
+                        <span class="listbox"><a href="/happyFamily">全家乐</a></span>
+                    </div>
+                </li>
+                <li class="nav4"><a>服务项目</a>
+                    <div class="navlist navlist4">
+                        <span class="listbox"><a style="padding-left:17px;padding-right:17px;">手游</a></span>
+                        <br>
+                        <span class="listbox"><a style="padding-left:17px;padding-right:17px;">手环</a></span>
+                    </div>
+                </li>
+                <li class="nav5" ><a href="/additem">加入项目</a></li>
+            </ul>
+        </div>           
+    </div>
+    <div class="box banner">
+            <div class="conbox">
+                <div class="bigpic" >
+                    <a href="" style="background-image: url('../../Content/ruiya/images/mainpic.jpg');"></a>
+                </div>
+                <div class="bigpic" >
+                    <a href="" style="background-image: url('../../Content/ruiya/images/mainpic2.jpg');"></a>
+                </div>
+                <div class="bigpic" >
+                    <a href="" style="background-image: url('../../Content/ruiya/images/mainpic3.jpg');"></a>
+                </div>
+                <div class="bigpic" >
+                    <a href="" style="background-image: url('../../Content/ruiya/images/mainpic4.jpg');"></a>
+                </div>
+                <div class="bigpic" >
+                    <a href="" style="background-image: url('../../Content/ruiya/images/mainpic5.jpg');"></a>
+                </div>
+            </div>
+            <div class="switcher">
+                <a href="#" class="cur"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+    </div>
+    <div class="box info">
+        <div class="about">
+            <p>关于瑞亚</p>
+            <span>温州瑞亚科技有限公司，瑞亚科技是将网络游戏技术，地域文化创业推广及电子商务平台相融合的一个平台，其核心团队成立于2014年，是一家专业的集网络游戏研发互联网应用，软件研发集一体的高新技术科技企业，位于浙江省温州市龙湾区。</span>
+        </div>
+        <div class="project">
+            <p>服务项目</p>
+            <span>手游开发</span>
+            <span>拥有成熟的产品研发团队，全家乐正是所有瑞亚人的心血所在，在技术和感情上，他都是一个新的尝试和出发。</span>
+        </div>
+        <div class="cases">
+            <p>案例展示</p>
+            <span>温州瑞亚科技有限公司，瑞亚科技是将网络游戏技术，地域文化创业推广及电子商务平台相融合的一个平台，其核心团队成立于2014年，是一家专业的集网络游戏研发互联网应用，软件研发集一体的高新技术科技企业，位于浙江省温州市龙湾区。</span>
+        </div>
+    </div>
+
+    <div class="newstable">
+        <div class="newstitle">
+            <span>新闻动态</span>
+        </div>
+        <div class="newstitle2">
+            <span>NEWS</span>
+        </div>
+        <br>
+        <div class="box">
+            @foreach (var item in Model)
+            {
+                <div class="newsdiv">
+                    <div class="aa">
+                        <a href="/Message?pro=ruiya&type=news&index=@Html.DisplayFor(modelItem => item.index)">@Html.DisplayFor(modelItem => item.title)</a>
+                        <br>
+                    </div>
+                    <div class="bb">
+                        <span>@Html.DisplayFor(modelItem => item.intro)</span>
+                    </div>
+                    <br>
+                    <div class="cc">
+                        <p>@Html.DisplayFor(modelItem => item.createTime)</p>
+                    </div>
+                </div>
+                
+            }
+            <!--<div class="newsdiv">
+                <div class="aa">
+                    <a href="#">智能家居电互联、互通,尚需...</a>
+                    <br>
+                </div>
+                <div class="bb">
+                    <span>温州瑞亚科技有限公司，瑞亚科技是将网络游戏</span>
+                </div>
+                <br>
+                <div class="cc">
+                    <p>2016.02.14</p>
+                </div>
+            </div>
+                -->
+        </div>
+    </div>
+    <br/>
+    <div class="footer">
+        <div class="footbox" >
+            <div class="logo">
+                <img src="~/Content/happyFamily/images/companylogo_03.png">
+            </div>
+            <div class="textline">
+                <h1>健康游戏公告:&nbsp;&nbsp;抵制不良游戏&nbsp;&nbsp;拒绝盗版游戏&nbsp;&nbsp;注意自我保护&nbsp;&nbsp;谨防受骗上当&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适度游戏益脑&nbsp;&nbsp;沉迷游戏伤身&nbsp;合理安排时间&nbsp;&nbsp;享受健康生活</h1>
+            </div>
+            <div class="copyright">
+                <h1>
+                    COPYRIGHT © 2016 RUIYA. ALL RIGHTS RESERVED.瑞亚科技版权所有
+                    浙网文[2014]0299-049号 | 增值电信许可 浙B2-20150520 | 备案号:浙ICP备14028342号-3
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function MM_jumpMenu(targ, selObj, restore) { //v3.0 
+        eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
+        if (restore) selObj.selectedIndex = 0;
+    }
+    $(".switcher a").hover(function () {
+        $(this).addClass("cur").siblings().removeClass("cur")
+        var index = $(this).index();
+        $(".conbox").stop(true,true).animate({left:(-100*index)+"%"},400)
+    }, function () {
+    })
+    
+    setInterval(function () {
+        var index = $(".switcher").find(".cur").index();
+        if (index >= 4) {
+            var nextIndex = 0;
+        } else {
+            var nextIndex = index + 1;
+        }
+        $(".switcher a").eq(nextIndex).addClass("cur").siblings().removeClass("cur");
+        $(".conbox").stop(true, true).animate({ left: (-100 * nextIndex) + "%" }, 400);
+    },5000)
+    $(document).ready(function () {
+            $(".bb").each(function () {
+                var maxwidth = 62;
+                if ($(this).text().length > maxwidth) {
+                    $(this).text($(this).text().substring(0, maxwidth));
+                    $(this).html($(this).html() + '…');
+                }
+            });
+    });
+    $(document).ready(function () {
+        $(".cc").each(function () {
+            var maxwidth = 36;
+            if ($(this).text().length > maxwidth) {
+                $(this).text($(this).text().substring(0, maxwidth));
+                $(this).html($(this).html());
+            }
+        });
+    });
+    $(document).ready(function () {
+        $(".nav3").mousemove(function () {
+            $(".navlist3").slideDown("normal");
+        });
+    });
+    $(document).ready(function () {
+        $(".nav3").mouseleave(function () {
+            $(".navlist3").slideUp("normal");
+        });
+    });
+    $(document).ready(function () {
+        $(".nav4").mousemove(function () {
+            $(".navlist4").slideDown("normal");
+        });
+    });
+    $(document).ready(function () {
+        $(".nav4").mouseleave(function () {
+            $(".navlist4").slideUp("normal");
+        });
+    });
+
+</script>

@@ -1,0 +1,479 @@
+﻿@model ruiya.Models.happyFamily.happyFamilyAllModels
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="ruiya" />
+    <meta name="Copyright" content="ruiya" />
+    <meta name="Description" content="《全家乐》是由瑞亚科技有限公司自主研发的一款农场模拟经营类游戏。在这里，玩家将作为一名农场主，通过种植作物，饲养动物，经营农作物商品来感受农场的欢乐生活。游戏特色的好友系统将扩大玩家的好友圈，与众多好友亲密互助，共同经营，将自己的农场一步一步发展成大型的，丰富多变的个性化农场。" />
+    <meta name="Keywords" content="手游,轻松,养成,农场,瑞亚,游戏,角色,网游,经营,休闲,画面，萌，掌机" />
+    <title>全家乐-官方网站</title>
+    <script type="text/javascript" src="~/Scripts/jquery.js"></script>
+    <link href="~/Content/happyFamily/happyfamily.css" rel="stylesheet" />
+    <link href="~/Content/happyFamily/popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/popup.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <style>
+         .header2 {
+            width:100%;
+            height:55px ;
+            background-color:black;
+        }
+          .header2 li {
+                position:relative;
+                display:block;
+            }
+            .header2 .menu {
+                position:absolute;
+                left:25%;
+                width:42%;
+            }
+                .header2 .menu li {
+                    
+                    display:inline;
+                    line-height:55px;
+                    height:55px;
+                    width:13%;
+                    font-size:21px;
+                    margin:0 2.3%;
+                }
+                    .header2 .menu li a {
+                        font-size:16px;
+                        font-weight:600;
+                        color: #cccccc;
+                    }
+                    .header2 .menu a:hover {
+                            text-decoration: none;
+                            color:#348be9;
+                            font-weight:900;
+                    }       
+            .header2 .search {
+                float:left;
+                background-color:#3c3c3c;
+                color:#7b7b7b;
+                line-height:normal;
+                margin-left:67%;
+                margin-top:18px;
+            }
+                .header2 .search .search-input{
+                    border:none;
+                    background:none;
+                    width:100px;
+                    height:19px;
+                    line-height:19px;
+                    outline: none;
+                    font-size:12px;
+                    vertical-align:top;
+                    color:#cccccc;
+                }
+        .pop {
+            display: none;
+            visibility: visible; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 50%; 
+            top: 50%;
+            margin-top: -95px; 
+            margin-left: -250px;
+            background-color:#fff;
+            -webkit-box-shadow: 10px 10px 25px #ccc; 
+            -moz-box-shadow: 10px 10px 25px #ccc; 
+            box-shadow: 10px 10px 25px #ccc; 
+        }
+        .pop-ctn {
+            padding: 5px;
+            position: relative;
+        }
+        .close {
+            padding: 1px;
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            filter: alpha(opacity=20);
+            opacity: .2;
+        }
+        .icons {
+            display: inline-block;
+            overflow: hidden;
+        }
+        .pop-ctn .icons-popclose {
+            margin-top: 9px;
+        }
+        .icons-popclose {
+            width: 23px;
+            height: 23px;
+            background-position: -96px 0;
+        }
+        .black_overlay{
+            display:none;
+            position:fixed;
+            top:0%;left:0%;
+            width:100%;
+            height:100%;
+            background-color:black;
+            z-index:1001;
+            -moz-opacity:0.8;
+            opacity:.80;
+            filter:alpha(opacity=80);
+        }
+        .textmember span{
+            font-size:10px;
+            color:#808080;
+            margin-left:20px;
+            margin-top:10px;
+        }
+    </style>
+    <script>
+    $(function(){
+	    $(".textmember li").mouseover(function(){
+			    var n= $(".textmember li").index($(this));
+
+			    $(".textmember2").fadeOut();
+			    $(".textmember2").eq(n).fadeIn(200);
+		    })
+	    $(".textmember li").mouseover(function(){
+			    var n= $(".textmember li").index($(this));
+
+			    $(".textmember li").removeClass("currentC");
+			    $(".textmember li").eq(n).addClass("currentC");
+		    })
+	    $(".gameul li").mouseenter(function(){
+			    var n= $(".gameul li").index($(this));
+			    $(".gameul li").removeClass("currentB");
+			    $(".gameul li").eq(n).addClass("currentB");
+			    $(".gamebox1").fadeOut();
+			    $(".gamebox1").eq(n).fadeIn(800);
+	    })
+    })
+    $(function(){
+
+	    function run(){
+
+		    $(".picinfbox").animate({left:-680},3000,
+		    function(){
+			    $(".picinfbox img:first").insertAfter($(".picinfbox img:last"));
+			    $(".picinfbox").css({left:0});
+			    });
+
+	    };
+	    setInterval(run,6000);
+
+    })
+
+    $(function(){
+	    $(".favopicture").click(function(){
+		    $(".favopicture .imgbox1").animate({left:-430},1000,
+		    function(){
+			    $(".imgbox1 img:first").insertAfter($(".imgbox1 img:last"));
+			    $(".imgbox1").css({ left: 0 });
+			    })
+		    })
+    })
+
+    $(document).ready(function () {
+        $("#jieshao").each(function () {
+            var maxwidth = 65;
+            if ($(this).text().length > maxwidth) {
+                $(this).text($(this).text().substring(0, maxwidth));
+                $(this).html($(this).html() + '…');
+            }
+        });
+        $(".navcation2").mouseover(function () {
+            $("#jianjie").show();
+        })
+        $(".navcation2").mouseout(function () {
+            $("#jianjie").hide();
+        })
+    });
+    
+    function mixSearch() {
+        var okeyword = $("search-input");
+        var oForm = $("search-form");
+        //提交给百度，构造地址参数
+        oForm.action = "http://www.baidu.com/s";
+        okeyword.name = "wd";
+        oForm.method = "get";
+        oForm.target = "baiduFrame";
+        oForm.submit();
+        function $(id) {
+            return document.getElementById(id);
+        }
+    }
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $(".infor1").click(function () {
+
+                $("#wxpop").fadeIn();
+                $('.black_overlay').css('display', 'block');
+            })
+            $(".close").click(function () {
+
+                $("#wxpop").fadeOut();
+                $('.black_overlay').css('display', 'none');
+            })
+            $(".infor3").click(function () {
+
+                $("#kfpop").fadeIn();
+                $('.black_overlay').css('display', 'block');
+            })
+            $(".close").click(function () {
+
+                $("#kfpop").fadeOut();
+                $('.black_overlay').css('display', 'none');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="headerbox">
+            <div class="complogo">
+                <a href="/"><img src="~/Content/happyFamily/images/companylogo2_07.png"></a>
+            </div>
+            <dl class="shopgift">
+                <a href="/happyfamily"><dd class="shop">礼包</dd></a>
+                <a href="/happyfamily"><dd class="gift">商城</dd></a>
+            </dl>
+        </div>
+    </div>
+    <div class="header2">
+        <ul class="menu">
+                <li class="menu-1"><a href="/happyfamily" title="官网首页">官网首页</a></li>
+                <li class="menu-2"><a href="/happyfamily/moreactivity" title="热门活动">热门活动</a></li>
+                <li class="menu-3"><a href="/happyFamily/HelpIndex" title="游戏资料">游戏资料</a></li>
+                <li class="menu-4"><a href="/happyfamily/morestrategy" title="攻略合集">攻略合集</a></li>
+        </ul>
+        <div class="search">
+            <form id="search-form" method="post" onsubmit="return false" target="_blank">
+                <button  type="submit" id="search-button" onclick="mixSearch();">search</button>
+                <input type="text" placeholder="搜索关键字" class="search-input" id="search-input">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contain">
+            <div class="nav">
+                <!--<img src="~/Content/images/580005_1_03.png" />-->
+                <div class="icon">
+                    <a href=""><img src="~/Content/happyFamily/images/icon1_03.png"></a>
+                </div>
+                <div class="navcation">
+                    <p><a class="currentA" href="happyFamily">全家乐</a></p>
+                </div>
+                <div class="navcation2">
+                    <p><a id="jieshao">是由瑞亚科技公司自主研发的一款农场模拟经营类游戏。在这里，玩家将作为一名农场主，通过种植作物，饲养动物，经营农作物商品来感受农场的欢乐生活。游戏特色的好友系统将扩大玩家的好友圈，与众多好友亲密互助，共同经营，将自己的农场一步一步发展成大型的，丰富多变的个性化农场。</a></p>
+                </div>
+                <div class="download">
+                    <a class="IOS"><img src="~/Content/happyFamily/images/download_03.png"></a>
+                    <a class="Andor"><img src="~/Content/happyFamily/images/download_06.png"></a>
+                    <div class="downloadshow">
+                        <img src="~/Content/happyFamily/images/code1_03.png">
+                    </div> 
+                </div>
+                        
+            </div>
+        </div>
+    </div>
+    <div class="bodybox">
+        <div class="columns">
+            <div class="news">
+                <h1></h1>
+            </div>       
+            
+            <div class="newsbox">
+                <div class="textinf">
+                    <div class="picfather">
+                        <div class="picinf">
+                            <div class="picinfbox">
+                                <img src="~/Content/happyFamily/images/text_03.png">
+                                <img src="~/Content/happyFamily/images/newspic.png">
+                                <img src="~/Content/happyFamily/images/text_03.png">
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="textmember">
+                        <li class="currentC" style="width:70px;"><center>公告</center></li>
+                        <li style="width:70px;"><center>新闻</center></li>
+                        <li style="width:70px;"><center>活动</center></li>   
+                        <li style="width:70px;"><center>攻略</center></li>  
+                        <span><a href="/happyfamily/morenews" title="查看更多" style="font-size:12px;float:right;height:15px;line-height:15px;">查看更多</a></span>                       
+                    </ul>
+                    
+                    
+                    <a href="#" style="font-size :14px;float:right;background-image:url(~/Content/happyFamily/images/more.PNG);">更多</a>
+                    <div class="textbox">
+                        <dl class="textmember2">
+                            @foreach (var modelitem in Model.GeneralMeses)
+                            {
+                                <dd><a href="/happyfamily/Message?pro=happyfamily&type=generalmes&index=@Html.DisplayFor(modelItem => modelitem.index)" style="float:left">[公告] @Html.DisplayFor(modelItem => modelitem.title)</a><br><p style="float:right"> @Html.DisplayFor(modelItem => modelitem.createTime)</p></dd>
+                            }
+                        </dl>
+                        <dl class="textmember2">
+                            @foreach (var modelitem in Model.Newses)
+                            {
+                                <dd><a href="/happyfamily/Message?pro=happyfamily&type=news&index=@Html.DisplayFor(modelItem => modelitem.index)" style="float:left">[新闻] @Html.DisplayFor(modelItem => modelitem.title)</a><br><p style="float:right">@Html.DisplayFor(modelItem => modelitem.createTime)</p></dd>
+                            }
+                        </dl>
+                        <dl class="textmember2">
+                            @foreach (var modelitem in Model.Activities)
+                            {
+                                <dd><a href="/happyfamily/Message?pro=happyfamily&type=activity&index=@Html.DisplayFor(modelItem => modelitem.index)" style="float:left">[活动] @Html.DisplayFor(modelItem => modelitem.title)</a><br><p style="float:right">@Html.DisplayFor(modelItem => modelitem.createTime)</p></dd>
+                            }
+                        </dl>
+                        <dl class="textmember2">
+                            @foreach (var modelitem in Model.Strategies)
+                            {
+                                <dd><a href="@Html.DisplayFor(modelItem => modelitem.url)" style="float:left">[攻略] @Html.DisplayFor(modelItem => modelitem.title)</a><br><p style="float:right">@Html.DisplayFor(modelItem => modelitem.createTime)</p></dd>
+                            }
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infbox">
+                <div class="gamebox">
+                    <div class="games">
+                        <h1>游戏资料</h1>
+                        <a href="/happyFamily/HelpIndex" title="查看更多" >查看更多</a>
+                    </div>
+                    <div class="Gameinformation">
+                        <ul class="gameul">
+                            <li class="ga1 currentB">建筑欣赏</li>
+                            <li class="ga2">动植物欣赏</li>
+                            <li class="ga3">装饰欣赏</li>
+                        </ul>
+                        <div class="gamepic">
+                            <div class="gamebox1">
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/building_07.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/building_10.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/building_13.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/Building_stall_G_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/Building_Brauhaus_N_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/Building__honeycomb1_G_03.png"></a></div>
+                            </div>
+                            <div class="gamebox1">
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/Animation_Pig_leftdown_walk00_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/Animation_Chicken_left_full02_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/Animation_Cattle_leftdown_full00_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/flower10_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/flower11_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/flower8_03.png"></a></div>
+                            </div>
+                            <div class="gamebox1">
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/580005_1_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/580011_1_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/light_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/stump3.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/straw_03.png"></a></div>
+                                <div class="imgbox"><a href="#"><img src="~/Content/happyFamily/images/stump2.png"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="picbox">
+                    <div class="pics">
+                        <h1>图片欣赏</h1>
+                        <a href="happyFamily/HelpSystem" title="查看更多">查看更多</a>
+                    </div>
+                    <div class="favopicture">
+                        <div class="imgbox1">
+                            <img src="~/Content/happyFamily/images/picfavo_03_03.png">
+                            <img src="~/Content/happyFamily/images/picfavo_04.png">
+                            <img src="~/Content/happyFamily/images/picfavo_04_03.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aboutusbox">
+                <div class="aboutus">
+                    <h1>关于我们</h1>
+                </div>
+                <div class="aboutusinfor">
+                    <div class="infor1">    
+                        <a id="infor1" rel="wx" href="javascript:">
+                            <img src="~/Content/happyFamily/images/pic-2_03.png">
+                            <h1>官方微信</h1>
+                        </a>                      
+                    </div>
+                    <div class="infor2">
+                        <a href="javascript:">
+                            <img src="~/Content/happyFamily/images/pic-2_06.png">
+                            <h1>官方微博</h1>
+                        </a>
+                    </div>
+                    <div class="infor3">
+                        <a href="javascript:">
+                            <img src="~/Content/happyFamily/images/pic-2_07.png">
+                            <h1>联系客服</h1>
+                        </a>
+                    </div>
+                    <div class="infor4">
+                        <a href="/happyFamily/HelpSystem">
+                            <img src="~/Content/happyFamily/images/pic-2_09.png">
+                            <h1>自助服务</h1>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footbox">
+            <div class="logo">
+                <img src="~/Content/happyFamily/images/companylogo_03.png">
+            </div>
+            <div class="textline">
+                <h1>健康游戏公告:&nbsp;&nbsp;抵制不良游戏&nbsp;&nbsp;拒绝盗版游戏&nbsp;&nbsp;注意自我保护&nbsp;&nbsp;谨防受骗上当&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适度游戏益脑&nbsp;&nbsp;沉迷游戏伤身&nbsp;合理安排时间&nbsp;&nbsp;享受健康生活</h1>
+            </div>
+            <div class="copyright">
+                <h1>
+                    COPYRIGHT © 2016 RUIYA. ALL RIGHTS RESERVED.瑞亚科技版权所有
+                    浙网文[2014]0299-049号 | 增值电信许可 浙B2-20150520 | 备案号:浙ICP备14028342号-3
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div id="wxpop" class="pop" role="dialog" tabindex="-1">
+        <div class="pop-ctn" id="wx">
+            <a href="javascript:closeD()" title="关闭" class="close" ><img src="~/Content/images/close01.png" width="30" height="36"></a>
+            <div>
+                <div class="f-left" style="width:350px;">
+                    <img src="~/Content/happyFamily/images/code1_03.png" alt="" width="180" height="180" style="float:left;" >
+                    <br>
+                    <br>
+                    <ol>微信扫描二维码</ol>
+                    <ol>获取游戏最新资讯</ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="kfpop" class="pop" role="dialog" tabindex="-1">
+        <div class="pop-ctn" id="wx">
+            <a href="javascript:closeD()" title="关闭" class="close"><img src="~/Content/images/close01.png" width="30" height="36"></a>
+            <div>
+                <div class="f-left" style="width:440px;">
+                    <img src="~/Content/happyFamily/images/girl.png" alt="" width="170" height="115" style="float:left; margin:3px;">
+                    <br>
+                    <ol>客服电话：  0577-88987016</ol>
+                    <ol>客服邮箱：linlili@yoouc.com</ol>
+                    <ol>客服QQ&nbsp;：&nbsp;3463346071</ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="black_overlay"></div>       
+</body>
+</html>

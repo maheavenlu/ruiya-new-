@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Views/Shared/ruiya_temp2.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowMessage</title>
+    <script src="~/Scripts/jquery.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var title = "@ViewBag.title";
+            var time = "@ViewBag.time";
+            $(".text").html(title);
+            $(".time").html(time);
+            $(".content").html($(".content").text());
+
+        }
+    </script>
+    <style>
+        .article {
+            width: 60%;
+            margin: 30px auto;
+            -webkit-box-shadow: 10px 10px 25px #ccc; 
+            -moz-box-shadow: 10px 10px 25px #ccc; 
+            box-shadow: 10px 10px 25px #ccc; 
+        }
+
+        .title {
+            font-size: 27px;
+            color: #11b3be;
+            font-family: 'Microsoft YaHei';
+            text-align: center;
+        }
+
+        .time {
+            font-size: 15px;
+            color: #8f8f8f;
+            text-align: center;
+        }
+
+        .content {
+            margin-top: 20px;
+            color: #8f8f8f;
+            font-size: 18px;
+            line-height: 30px;
+        }
+    </style>
+ 
+</head>
+<body>
+
+    <div class="article">
+        <div class="title">
+            <div class="text">标题</div>
+            <br>
+            <span class="time">@ViewBag.time</span>
+        </div>
+        <div class="content">@ViewBag.content</div>
+        <hr>
+    </div>
+</body>
+</html>
