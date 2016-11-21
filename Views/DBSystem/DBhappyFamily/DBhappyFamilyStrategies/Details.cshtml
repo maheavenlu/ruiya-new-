@@ -1,0 +1,124 @@
+﻿@model ruiya.Models.happyFamily.happyFamilyStrategy
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="~/Content/DBSystem/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/DBSystem/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/DBSystem/Css/style.css" />
+    <script type="text/javascript" src="~/Content/DBSystem/Js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/ckform.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/common.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/ckeditor/ckeditor.js"></script>
+    <style>
+        .tt {
+            background-color: rgba(156, 219, 243, 0.48);
+            height: 60px;
+        }
+
+        #create {
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tt">
+        <h2 style="color:#184196; margin-left:10%;">信息查看</h2>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" id="create">
+            <h4>全家乐攻略</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <span>序号: </span>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.index, new { htmlAttributes = new { @style = "width:40%;", @readOnly = "readOnly", @class = "form-control" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="index" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <span>标题: </span>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.title, new { htmlAttributes = new { @style = "width:40%;", @readOnly = "readOnly", @class = "form-control" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="title" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <span>url: </span>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.url, new { htmlAttributes = new { @style = "width:40%;", @readOnly = "readOnly", @class = "form-control" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="url" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <p>简介(右下角拉大)</p>
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.intro, new { @disabled = "disabled ", @style = "width:40%;", htmlAttributes = new { @class = "form-control" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="intro" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <p>内容编辑(右下角下拉)：</p>
+                <div class="col-md-1">
+                    @Html.TextAreaFor(model => model.content, new { @disabled = "disabled ", htmlAttributes = new { @class = "form-control", @name = "content" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="content" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <p>创建时间</p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.createTime, new { htmlAttributes = new { @style = "width:25%;", @readOnly = "readOnly", @class = "form-control" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="createTime" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <p>创建者</p>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.creator, new { htmlAttributes = new { @style = "width:25%;", @readOnly = "readOnly", @class = "form-control" } })
+                    <span class="field-validation-valid text-danger" data-valmsg-for="creator" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <button type="button" class="btn btn-warning" onclick="location.href = '/DBSystem/happyfamily/News'">@Html.ActionLink("返回", "Index")</button>
+                </div>
+
+            </div>
+        </div>
+    }
+
+    <div>
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    CKEDITOR.config.width = 800;
+    CKEDITOR.config.height = 600;
+    var editor = CKEDITOR.replace('content');
+    CKFinder.setupCKEditor(editor, '~/Content/DBSystem/ckfinder/');
+</script> 

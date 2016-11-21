@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "~/Views/Shared//happyfamily_temp.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowMessage</title>
+    <script src="~/Scripts/jquery.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var title = "@ViewBag.title";
+            var time = "@ViewBag.time";
+            $(".text").html(title);
+            $(".time").html(time);
+            $(".content").html($(".content").text());
+
+        }
+    </script>
+    <style>
+        .article{
+            margin:30px auto;
+            -webkit-box-shadow: 10px 10px 25px #ccc; 
+            -moz-box-shadow: 10px 10px 25px #ccc; 
+            box-shadow: 10px 10px 25px #ccc; 
+        }
+        .title {
+            font-size:27px;
+            color:#11b3be;
+            font-family:'Microsoft YaHei';
+            text-align:center;
+        }
+        .time{
+            font-size:15px;
+            color:#8f8f8f;
+            text-align:center;
+        }
+        .content{
+            margin-top:20px;
+            color:#8f8f8f;
+            font-size:18px;
+            line-height:30px;
+        }
+        .page-header{
+            margin:0px auto;
+           padding:5px 10px;
+       }
+       .page-header span{
+           font-size:20px;
+           color:#7b7b7b;
+       }
+       .mainbody{
+           width:60%;
+           /*border:1px solid red;*/
+           margin:30px auto;
+
+       }
+    </style>
+</head>
+<body>
+    <div class="mainbody">
+        <div class="page-header">
+            <span><a href="/happyfamily">全家乐农场</a></span>
+            <span>></span>
+            <span><a href="/happyfamily/morenews">新闻中心</a></span>
+            <span>></span>
+            <span>@ViewBag.type</span>
+        </div>
+        <div class="article">
+            <div class="title">
+                <div class="text"></div>
+                <span class="time"></span>
+            </div>
+            <div class="content">@ViewBag.content</div>
+        </div>
+        <br>
+    </div>
+</body>
+</html>
+
+
+
+

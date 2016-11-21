@@ -1,0 +1,301 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />   
+    <meta name="author" content="ruiya" />
+    <meta name="Copyright" content="ruiya" />
+    <meta name="Description" content="@ViewBag.title" />
+    <meta name="Keywords" content="手游,轻松,养成,农场,瑞亚,游戏,角色,网游,经营,休闲,画面，萌，掌机" />
+    <title>全家乐-@ViewBag.title</title>
+    <script src="~/Scripts/jquery.js"></script>
+    <script type="text/javascript">
+    </script>
+    <style>
+         body {
+            margin: 0;
+        }
+
+        h1, p {
+            list-style: none;
+            text-decoration: none;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+
+        li, ul, dl, dd {
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            a{
+                text-decoration: none;
+                color: #cccccc;
+            }
+
+        .header {
+            width: 100%;
+            height: 42px;
+            background-image: url('~/Content/happyFamily/images/headbac_01.png');
+            overflow: hidden;
+        }
+
+        .headerbox {
+            width: 1000px;
+            height: 42px;
+            margin: auto;
+            margin-top: 5px;
+        }
+
+            .headerbox .complogo {
+                width: 120px;
+                height: 40px;
+                float: left;
+            }
+
+            .headerbox dl {
+                float: right;
+                display: block;
+                width: 150px;
+                height: 30px;
+                margin: 0;
+                margin-top: 5px;
+            }
+
+            .headerbox .shop {
+                background-image: url('../../Content/happyFamily/images/headerlogo_03.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                width: 50px;
+                height: 30px;
+                float: left;
+                margin: 0;
+                padding-left: 25px;
+                font-family: "微软雅黑";
+                font-size: 14px;
+                color: #666;
+                height: 25px;
+                display: block;
+                line-height: 25px;
+            }
+
+            .headerbox .gift {
+                background-image: url('../../Content/happyFamily/images/headerlogo_07.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                width: 50px;
+                height: 30px;
+                float: left;
+                margin: 0;
+                padding-left: 25px;
+                font-family: "微软雅黑";
+                font-size: 14px;
+                color: #666;
+                height: 25px;
+                display: block;
+                line-height: 25px;
+            }
+
+            .headerbox dd:hover {
+                color: black;
+            }
+        .header2 {
+            width:100%;
+            height:55px ;
+            background-color:black;
+        }
+            .header2 li {
+                position:relative;
+                display:block;
+            }
+            .header2 .menu {
+                position:absolute;
+                left:25%;
+                width:42%;
+            }
+                .header2 .menu li {
+                    
+                    display:inline;
+                    line-height:55px;
+                    height:55px;
+                    width:13%;
+                    font-size:21px;
+                    margin:0 2%;
+                }
+                    .header2 .menu li a {
+                        font-size:16px;
+                        font-weight:600;
+                    }
+                    .header2 .menu a:hover {
+                            text-decoration: none;
+                            color:#348be9;
+                            font-weight:900;
+                    }       
+            .header2 .search {
+                float:left;
+                background-color:#3c3c3c;
+                color:#7b7b7b;
+                line-height:normal;
+                margin-left:67%;
+                margin-top:18px;
+            }
+            .header2 .search .search-input{
+                border:none;
+                background:none;
+                width:100px;
+                height:19px;
+                line-height:19px;
+                outline: none;
+                font-size:12px;
+                vertical-align:top;
+                color:#cccccc;
+
+            }
+         .container {
+            width: 100%;
+            height: 360px;
+        }
+
+        .contain {
+            background-image: url('../../Content/happyFamily/images/beijin.png');
+            height: 360px;
+            margin: 0 auto;
+            width: 100%;
+            background-position:center;
+            background-size:cover;
+            overflow: hidden;
+        }
+
+            .contain .nav {
+                width: 100%;
+                height: 110px;
+                background-image: url('~/Content/happyFamily/images/touming2.png');
+                margin-top: 440px;
+                position: relative;
+            }
+
+         .footer {
+            width: 100%;
+            height: 110px;
+            background-color: #2f2f2f;
+        }
+
+        .footbox {
+            width: 1000px;
+            height: 110px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 180px;
+            height: 40px;
+            margin-top: 30px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .textline {
+            width: 450px;
+            height: 60px;
+            float: left;
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+
+            .textline h1 {
+                font-size: 12px;
+                color: #999;
+                font-family: "微软雅黑";
+                line-height: 25px;
+            }
+
+        .copyright {
+            width: 300px;
+            height: 60px;
+            float: left;
+            margin-top: 20px;
+        }
+
+            .copyright h1 {
+                font-size: 12px;
+                color: #999;
+                font-family: "微软雅黑";
+                line-height: 25px;
+            }
+    </style>
+    <script>
+        function mixSearch() {
+            var okeyword = $("search-input");
+            var oForm = $("search-form");
+            //提交给百度，构造地址参数
+            oForm.action = "http://www.baidu.com/s";
+            okeyword.name = "wd";
+            oForm.method = "get";
+            oForm.target = "baiduFrame";
+            oForm.submit();
+            function $(id) {
+                return document.getElementById(id);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="headerbox">
+            <div class="complogo">
+                <a href="/"><img src="~/Content/happyFamily/images/companylogo2_07.png"></a>
+            </div>
+            <dl class="shopgift">
+                <a href=""><dd class="shop">礼包</dd></a>
+                <a href=""><dd class="gift">商城</dd></a>
+            </dl>
+        </div>
+    </div>
+    <div class="header2">
+        <ul class="menu">
+            <li class="menu-1"><a href="/happyfamily" title="官网首页">官网首页</a></li>
+            <li class="menu-2"><a href="/happyfamily/moreactivity" title="热门活动">热门活动</a></li>
+            <li class="menu-3"><a href="/happyFamily/HelpIndex" title="游戏资料">游戏资料</a></li>
+            <li class="menu-4"><a href="/happyfamily/morestrategy" title="攻略合集">攻略合集</a></li>
+        </ul>
+        <div class="search">
+            <form id="search-form" method="post" onsubmit="return false" target="_blank">
+                <button type="submit" id="search-button" onclick="mixSearch();">search</button>
+                <input type="text" placeholder="搜索关键字" class="search-input" id="search-input">
+            </form>
+        </div>
+    </div>  
+    <div class="container">
+        <div class="contain">
+            <div class="nav">
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="footer">
+        <div class="footbox">
+            <div class="logo">
+                <img src="~/Content/happyFamily/images/companylogo_03.png">
+            </div>
+            <div class="textline">
+                <h1>健康游戏公告:&nbsp;&nbsp;抵制不良游戏&nbsp;&nbsp;拒绝盗版游戏&nbsp;&nbsp;注意自我保护&nbsp;&nbsp;谨防受骗上当&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;适度游戏益脑&nbsp;&nbsp;沉迷游戏伤身&nbsp;合理安排时间&nbsp;&nbsp;享受健康生活</h1>
+            </div>
+            <div class="copyright">
+                <h1>
+                    COPYRIGHT © 2016 RUIYA. ALL RIGHTS RESERVED.瑞亚科技版权所有
+                    浙网文[2014]0299-049号 | 增值电信许可 浙B2-20150520 | 备案号:浙ICP备14028342号-3
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

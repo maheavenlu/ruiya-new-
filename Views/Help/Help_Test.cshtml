@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "Help_Test";
+}
+
+<link href="~/Content/happyFamily/happyfamilyhelp.css" rel="stylesheet" />
+
+@*<style>
+    .breadcrumb {
+    margin-top: 15px;
+}
+    .page-main {
+    background-color:#F7F7F7;
+    }
+</style>*@
+
+<!--breadcrumb-->
+<div class="container clear">
+    <ol class="breadcrumb f-left">
+        <li class="index"><span class="ficon ficon-home"></span><a href="/">瑞亚官网</a></li>
+        <li>&gt;</li>
+        <li><a href="/web201406/gamedata.shtml">全家乐</a></li>
+        <li>&gt;</li>
+        <li class="active">建筑系统</li>
+    </ol>
+    <div class="f-right page-down" id="page-down-f">
+        <a href="javascript:" title="游戏下载" class="btn-gamedown" id="page-down" onclick="pgvSendClick({hottag:'page.download.btn.download'})">游戏下载</a>
+        <div class="down-expand" id="down-expand" style="display: none;">
+            <div class="down-expand-bd">
+                <div class="down-expand-ctn">
+                    <h3 class="down-expand-title">游戏下载</h3>
+                    <ul class="down-expand-btn">
+                        <li><a href="http://qfarm.qq.com/d/?device=iphone" title="IOS游戏下载" class="gdown-btn gdown-btn-ios" target="_blank" onclick="pgvSendClick({hottag:'page.download.btn.ios'})">IOS游戏下载</a></li>
+                        <li><a href="http://qfarm.qq.com/d/?device=android" title="安卓游戏下载" class="gdown-btn gdown-btn-android" target="_blank" onclick="pgvSendClick({hottag:'page.download.btn.android'})">安卓游戏下载</a></li>
+                    </ul>
+                    <div class="down-expand-qrcode clear">
+                        <img src="http://ossweb-img.qq.com/images/qfarm/gproject/pc/qrcode-inner.png" alt="扫描二维码下载游戏" width="77" height="77" class="f-left">
+                        <p class="down-expand-txt">扫描二维码<br>下载游戏</p>
+                    </div>
+                    <div class="down-expand-optr">
+                        <a href="javascript:" title="关闭" id="down-close" onclick="pgvSendClick({hottag:'page.download.btn.close'})"><span class="icons icons-up"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--系统选择列表栏-->
+<div class="page-navi">
+    <div class="container clear">
+        <ul class="navi navi-col6" id="catnavi">
+            <li class="active"><a href="/webplat/info/news_version3/7641/10131/10143/10144/m8043/list_1.shtml" title="农场建筑">全家乐建筑</a></li>
+            <li class="navi-m2"><a href="/webplat/info/news_version3/7641/10131/10143/10145/m8043/list_1.shtml" title="动物植物">全家乐养殖</a></li>
+            <li class="navi-m3"><a href="/webplat/info/news_version3/7641/10131/10143/10146/m8043/list_1.shtml" title="生产物品">全家乐系统</a></li>
+
+        </ul>
+    </div>
+</div>
+
+<!--列表栏-->
+<div class="page-main">
+    <div class="container">
+        <div class="col-lg">
+            <ul class="list list-col4 list-row2 comm-color list-lg clear">
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288329.shtml" title="商店" target="_blank">
+                        <img src="/Content/happyFamily/icon/sd.jpg" alt="商店" width="180" height="147" class="list-thumb">
+                        <p class="list-link">商店</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288327.shtml" title="车房" target="_blank">
+                        <img src="/Content/happyFamily/icon/cf.jpg" alt="车房" width="180" height="147" class="list-thumb">
+                        <p class="list-link">车房</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288325.shtml" title="地摊" target="_blank">
+                        <img src="/Content/happyFamily/icon/dt.jpg" alt="地摊" width="180" height="147" class="list-thumb">
+                        <p class="list-link">地摊</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288322.shtml" title="休闲吧" target="_blank">
+                        <img src="/Content/happyFamily/icon/xxb.jpg" alt="休闲吧" width="180" height="147" class="list-thumb">
+                        <p class="list-link">休闲吧</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288311.shtml" title="我的家" target="_blank">
+                        <img src="/Content/happyFamily/icon/wdj.jpg" alt="我的家" width="180" height="147" class="list-thumb">
+                        <p class="list-link">我的家</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288310.shtml" title="竞技场" target="_blank">
+                        <img src="/Content/happyFamily/icon/jjc.jpg" alt="竞技场" width="180" height="147" class="list-thumb">
+                        <p class="list-link">竞技场</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288306.shtml" title="加工厂" target="_blank">
+                        <img src="/Content/happyFamily/icon/jgc.jpg" alt="加工厂" width="180" height="147" class="list-thumb">
+                        <p class="list-link">加工厂</p>
+                    </a>
+                </li>
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288303.shtml" title="金融大厦" target="_blank">
+                        <img src="/Content/happyFamily/icon/jrds.jpg" alt="金融大厦" width="180" height="147" class="list-thumb">
+                        <p class="list-link">金融大厦</p>
+                    </a>
+                </li>
+
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288303.shtml" title="货船" target="_blank">
+                        <img src="/Content/happyFamily/icon/hc.jpg" alt="货船" width="180" height="147" class="list-thumb">
+                        <p class="list-link">货船</p>
+                    </a>
+                </li>
+
+                <li class="txt-c">
+                    <a href="/webplat/info/news_version3/7641/10131/10143/10144/m8046/201411/288303.shtml" title="码头" target="_blank">
+                        <img src="/Content/happyFamily/icon/mt.jpg" alt="码头" width="180" height="147" class="list-thumb">
+                        <p class="list-link">码头</p>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="pager pager-r"></ul>
+
+        </div>
+    </div>
+</div>
+

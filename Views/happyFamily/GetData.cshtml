@@ -1,0 +1,66 @@
+﻿<!--model IEnumerable<ruiya.Models.happyFamily.happyFamilyNews>-->
+@model ruiya.Models.happyFamily.happyFamilyAllModels
+@{
+    ViewBag.Title = "GetData";
+}
+
+<h2>happyFamilyGetData</h2>
+@ViewBag.id
+
+<h2>happyFamilyGetData</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Newses)
+        </th>
+    </tr>
+    @foreach (var modelitem in Model.Newses)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.intro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.createTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.creator)
+            </td>
+        </tr>
+    }
+    <tr></tr>
+    @foreach (var modelitem in Model.Activities)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.index)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.intro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.createTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelitem.creator)
+            </td>
+        </tr>
+    }
+    <tr></tr>
+</table>
+

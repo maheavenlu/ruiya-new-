@@ -1,0 +1,779 @@
+﻿         body {
+            margin: 0;
+        }
+
+        h1, p {
+            list-style: none;
+            text-decoration: none;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+        }
+
+        li, ul, dl, dd {
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            a{
+                text-decoration: none;
+                color: #cccccc;
+            }
+
+        .header {
+            width: 100%;
+            height: 42px;
+            background-image: url('~/Content/happyFamily/images/headbac_01.png');
+            overflow: hidden;
+        }
+
+        .headerbox {
+            width: 1000px;
+            height: 42px;
+            margin: auto;
+            margin-top: 5px;
+        }
+
+            .headerbox .complogo {
+                width: 120px;
+                height: 40px;
+                float: left;
+            }
+
+            .headerbox dl {
+                float: right;
+                display: block;
+                width: 150px;
+                height: 30px;
+                margin: 0;
+                margin-top: 5px;
+            }
+
+            .headerbox .shop {
+                background-image: url('../../Content/happyFamily/images/headerlogo_03.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                width: 50px;
+                height: 30px;
+                float: left;
+                margin: 0;
+                padding-left: 25px;
+                font-family: "微软雅黑";
+                font-size: 14px;
+                color: #666;
+                height: 25px;
+                display: block;
+                line-height: 25px;
+            }
+
+            .headerbox .gift {
+                background-image: url('../../Content/happyFamily/images/headerlogo_07.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                width: 50px;
+                height: 30px;
+                float: left;
+                margin: 0;
+                padding-left: 25px;
+                font-family: "微软雅黑";
+                font-size: 14px;
+                color: #666;
+                height: 25px;
+                display: block;
+                line-height: 25px;
+            }
+
+            .headerbox dd:hover {
+                color: black;
+            }
+        .header2 {
+            width:100%;
+            height:55px ;
+            background-color:black;
+        }
+          .header2 li {
+                position:relative;
+                display:block;
+            }
+            .header2 .menu {
+                position:absolute;
+                left:25%;
+                width:42%;
+            }
+                .header2 .menu li {
+                    
+                    display:inline;
+                    line-height:55px;
+                    height:55px;
+                    width:13%;
+                    font-size:21px;
+                    margin:0 2.3%;
+                }
+                    .header2 .menu li a {
+                        font-size:16px;
+                        font-weight:600;
+                        color: #cccccc;
+                    }
+                    .header2 .menu a:hover {
+                            text-decoration: none;
+                            color:#348be9;
+                            font-weight:900;
+                    }       
+            .header2 .search {
+                float:left;
+                background-color:#3c3c3c;
+                color:#7b7b7b;
+                line-height:normal;
+                margin-left:67%;
+                margin-top:18px;
+            }
+                .header2 .search .search-input{
+                    border:none;
+                    background:none;
+                    width:100px;
+                    height:19px;
+                    line-height:19px;
+                    outline: none;
+                    font-size:12px;
+                    vertical-align:top;
+                    color:#cccccc;
+                }
+
+        .container {
+            width: 100%;
+            height: 550px;
+        }
+
+        .contain {
+            background-image: url('../../Content/happyFamily/images/beijin.png');
+            height: 550px;
+            margin: 0 auto;
+            width: 100%;
+            background-position: center;
+            overflow: hidden;
+        }
+
+            .contain .nav {
+                width: 100%;
+                height: 110px;
+                background-image: url('~/Content/happyFamily/images/touming2.png');
+                margin-top: 440px;
+                position: relative;
+            }
+
+        .icon {
+            float:left;
+            margin-left:14%;
+            margin-top: -80px;
+            width: 100px;
+            height: 100px;
+        }
+         .navcation {
+            width: 200px;
+            height: 100px;
+            float:left;
+            margin-left:50px;
+            margin-top:-180px;
+        }
+
+            .navcation .currentA {
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                color: #301515;
+            }
+        .navcation2{
+            
+            float:left;
+            width: 21%;
+            margin-left:60px;
+            margin-top:-135px;
+        }
+            .navcation2 a {
+                font-family:'Microsoft YaHei';
+                font-size:14px;
+                color:#348be9;
+            }
+
+
+        .download {
+            float:right;
+            width: 10%;
+            height: 103px;
+            margin-right:27%;
+            margin-top: -16px;
+        }
+
+            .download img {
+                cursor: pointer;
+            }
+
+            .download .downloadshow {
+                width: 180px;
+                height: 177px;
+                margin-right: 2%;
+                margin-top: -280px;
+            }
+
+       
+        .container p {
+            float: left;
+            font-size: 36px;
+            margin: 0;
+            font-family: "宋体";
+            margin-right: 20px;
+            display: block;
+            margin-top: 40px;
+            color: #FFF;
+            font-weight:900;
+        }
+
+        .navcation p a {
+            font-size: 36px;
+            margin: 0px;
+            font-family: "宋体";
+            display: block;
+            height: 75px;
+            color: #CCC;
+            font-weight:900;
+        }
+
+        .bodybox {
+            width: 100%;
+            height: 1400px;
+            background-image: url('~/Content/happyFamily/images/bodybeijin.png');
+        }
+
+        .columns {
+            width: 1000px;
+            height: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding-top: 40px;
+        }
+
+        .news {
+            width: 1000px;
+            height: 100px;
+            background-image: url('~/Content/happyFamily/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+            margin-bottom: 40px;
+        }
+
+            .news h1 {
+                font-size: 42px;
+                font-family: "迷你简菱心";
+                color: #3c3c3c;
+                display: block;
+                padding-left: 75px;
+                background-image: url('~/Content/happyFamily/images/yaoqianshu_07.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                height: 62px;
+                line-height: 70px;
+            }
+
+        .newsbox {
+            width: 1050px;
+            height: 365px;
+        }
+
+        .textinf {
+            width: 1050px;
+            height: 340px;
+            float: right;
+            margin-right: 0px;
+            overflow: hidden;
+        }
+            .textinf .textmember {
+                float:left;
+                width: 330px;
+                height:auto;
+                top:750px;
+                margin-left :5%;
+                border-bottom:1px solid #C8C9D4;
+            }
+
+                .textinf .textmember li {
+                    margin: 0;
+                    line-height: 35px;
+                    width: 50px;
+                    height: 35px;
+                    cursor: pointer;
+                }
+                .textinf .textmember ll{
+                    background-image:url(../Content/happyFamily/images/more.PNG);
+                    float:right;
+                    font-size:14px;
+                }
+
+                .textinf .textmember .currentC {
+                    color:#348be9;
+                    border-bottom:5px solid #348be9;
+                    background-repeat: no-repeat;
+                    background-position: center left;
+                }
+
+            .textinf .textbox {
+                float:left;
+                margin-left:5%;
+                margin-top:20px;
+                width: 155px;
+                height: 400px;
+            }
+
+            .textinf .textmember2 {
+                margin-right:50px;
+                width: 320px;
+                height: 320px;
+                display: block;
+            }
+
+                .textinf .textmember2 dd {
+                    margin:0;
+                    margin-top: 28px;
+                    width: 355px;
+                }
+
+                .textinf .textmember2 a {
+                    color: #24f7ea;
+                    font-family: "微软雅黑";
+                }
+
+                .textinf .textmember2 p {
+                    font-family: "微软雅黑";
+                }
+
+                .textinf .textmember2 a:hover {
+                    color: #348be9;
+                    font-weight:800;
+                }
+
+            .textinf .current {
+                background-image: url('~/Content/happyFamily/images/xiahua_19.png');
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
+
+        .picfather {
+            float:left;
+            margin-left:3%;
+            margin-top:0px;
+            width: 480px;
+            height: 340px;
+            overflow: hidden;
+        }
+
+        .picinf {
+            width: 2040px;
+            height: 340px;
+            position: relative;
+        }
+
+        .picinfbox {
+            width: 2040px;
+            height: 340px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+            .picinfbox img {
+                float: left;
+            }
+
+        .newsbox ul {
+            width: 280px;
+            height: 40px;
+            margin-left: 50px;
+            display: block;
+            padding: 0;
+        }
+
+        .newsbox li {
+            margin: 0;
+            font-size: 20px;
+            font-family: "微软雅黑";
+            float: left;
+            margin-right: 40px;
+            display: block;
+            width: 40px;
+            height: 30px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .newsbox dd {
+            display: block;
+            margin-left: 20px;
+            font-size: 14px;
+            width: 250px;
+            height: 25px;
+            margin-top: 25px;
+            background-image: url('~/Content/happyFamily/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+            line-height: 20px;
+            clear: left;
+        }
+
+        .gamebox {
+            width: 530px;
+            height: 480px;
+            float: left;
+            margin-right: 40px;
+            margin-top: 20px;
+        }
+
+        .games {
+            width: 530px;
+            height: 60px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            background-image: url('~/Content/happyFamily/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+            .games h1 {
+                font-size: 26px;
+                font-family: 'Microsoft YaHei';
+                display: block;
+                padding-left: 70px;
+                width: 200px;
+                height: 71px;
+                background-image: url('~/Content/happyFamily/images/pic_03.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 80px;
+            }
+            .games a {
+                font-size:12px;
+                float:right;
+                height:15px;
+                line-height:15px;
+                margin-top:3px
+            }
+
+        .Gameinformation {
+            width: 530px;
+            height: 308px;
+            overflow: hidden;
+        }
+
+            .Gameinformation .gameul {
+                width: 530px;
+                height: 60px;
+                display: block;
+                margin-left:10%;
+            }
+
+            .Gameinformation li {
+                float: left;
+                font-size: 22px;
+                display: block;
+                cursor: pointer;
+            }
+
+            .Gameinformation .ga1 {
+                margin: 5px 0px;
+                width: 100px;
+                height: 35px;
+            }
+
+            .Gameinformation .currentB {
+                color:#348be9;
+                border-bottom:4px solid #348be9;
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
+
+            .Gameinformation .ga2 {
+                margin: 5px 10%;
+                width: 120px;
+                height: 35px;
+            }
+
+            .Gameinformation .ga3 {
+                margin: 5px;
+                margin-left:3%;
+                width: 100px;
+                height: 35px;
+            }
+
+        .gamepic {
+            width: 530px;
+            height: 240px;
+        }
+
+            .gamepic .gamebox1 {
+                width: 530px;
+                height: 240px;
+            }
+
+        .gamebox1 .imgbox {
+            width: 168px;
+            height: 120px;
+            float: left;
+            margin:4px;
+            background-color:#328ab6;
+        }
+
+        .imgbox img {
+            display: block;
+            margin: 16px auto;
+        }
+
+        .picbox {
+            width: 430px;
+            height: 480px;
+            float: left;
+            margin-top: 20px;
+        }
+
+        .pics {
+            width: 430px;
+            height: 90px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+            background-image: url('~/Content/happyFamily/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+            .pics h1 {
+                font-size: 26px;
+                font-family: "Microsoft YaHei";
+                display: block;
+                padding-left: 70px;
+                width: 200px;
+                height: 71px;
+                background-image: url('~/Content/happyFamily/images/pic_06.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 80px;
+            }
+            .pics a {
+                font-size:12px;
+                float:right;
+                height:15px;
+                line-height:15px;
+                margin-top:3px
+            }
+
+        .favopicture {
+            width: 430px;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+            .favopicture .imgbox1 {
+                width: 1290px;
+                height: 280px;
+                position: absolute;
+            }
+
+        .imgbox1 img {
+            cursor: pointer;
+        }
+
+        .aboutusbox {
+            width: 1000px;
+            height: 380px;
+            clear: left;
+        }
+
+        .aboutus {
+            width: 1000px;
+            height: 90px;
+            background-image: url('~/Content/happyFamily/images/line_03.png');
+            background-repeat: repeat-x;
+            background-position: bottom;
+        }
+
+            .aboutus h1 {
+                font-size: 26px;
+                font-family: "Microsoft YaHei";
+                display: block;
+                padding-left: 70px;
+                width: 200px;
+                height: 71px;
+                background-image: url('~/Content/happyFamily/images/pic_10.png');
+                background-repeat: no-repeat;
+                background-position: left;
+                line-height: 80px;
+            }
+
+        .aboutusinfor {
+            width: 1000px;
+            height: 310px;
+        }
+
+            .aboutusinfor .infor1 {
+                width: 250px;
+                height: 280px;
+                float: left;
+            }
+
+        .infor1 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor1 h1 {
+            margin: 10px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor1 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 130px;
+        }
+
+        .aboutusinfor .infor2 {
+            width: 250px;
+            height: 280px;
+            float: left;
+        }
+
+        .infor2 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor2 h1 {
+            margin: 15px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor2 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 90px;
+        }
+
+        .aboutusinfor .infor3 {
+            width: 250px;
+            height: 280px;
+            float: left;
+        }
+
+        .infor3 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor3 h1 {
+            margin: 15px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor3 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 140px;
+        }
+
+        .aboutusinfor .infor4 {
+            width: 250px;
+            height: 280px;
+            float: left;
+        }
+
+        .infor4 img {
+            display: block;
+            margin: 5px auto;
+            margin-top: 60px;
+        }
+
+        .infor4 h1 {
+            margin: 10px auto;
+            display: block;
+            width: 100px;
+            color: #666;
+            font-size: 24px;
+        }
+
+        .infor4 h2 {
+            margin: 15px auto;
+            display: block;
+            font-size: 14px;
+            color: #666;
+            font-family: "微软雅黑";
+            width: 100px;
+        }
+
+        .footer {
+            width: 100%;
+            height: 110px;
+            background-color: #2f2f2f;
+        }
+
+        .footbox {
+            width: 1000px;
+            height: 110px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 180px;
+            height: 40px;
+            margin-top: 30px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .textline {
+            width: 450px;
+            height: 60px;
+            float: left;
+            margin-top: 30px;
+            margin-left: 40px;
+        }
+
+            .textline h1 {
+                font-size: 12px;
+                color: #999;
+                font-family: "微软雅黑";
+                line-height: 25px;
+            }
+
+        .copyright {
+            width: 300px;
+            height: 60px;
+            float: left;
+            margin-top: 20px;
+        }
+
+            .copyright h1 {
+                font-size: 12px;
+                color: #999;
+                font-family: "微软雅黑";
+                line-height: 25px;
+            }

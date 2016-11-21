@@ -1,0 +1,79 @@
+﻿@model ruiya.Models.DBSystem.DBSystemUsers
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/DBSystem/Css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/DBSystem/Css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/DBSystem/Css/style.css" />
+    <script type="text/javascript" src="~/Content/DBSystem/Js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/ckform.js"></script>
+    <script type="text/javascript" src="~/Content/DBSystem/Js/common.js"></script>
+    <script src="~/Content/DBSystem/Js/base64.js"></script>
+    <script src="~/Content/DBSystem/Js/jquery.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            /*************************
+            *创建Base64对象，用于对数据的加密解密
+            *获取输入password 和 username在提交时进行加密，
+            ***************************/
+            var base64 = new Base64();
+            /*var Oform = document.getElementsByTagName("form")[0];
+            Oform.onsubmit = function () {
+                var password = document.getElementById("password").value;
+                var username = document.getElementById("username").value;
+                document.getElementById("password").value = base64.encode(password);
+                document.getElementById("username").value = base64.encode(username);
+                //alert(pass + document.getElementById("password").value);
+            }*/
+            var Oform = document.getElementsByTagName("form")[0];
+            Oform.onsubmit = function () {
+                $("#password").val(base64.encode($("#password").val()));
+                $("#username").val(base64.encode($("#username").val()));
+            }
+        }
+    </script>
+    <style>
+        #create {
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>删除用户</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="删除" class="btn btn-danger" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-warning" onclick="location.href = '/DBSystem/DBSystem/User'">@Html.ActionLink("取消", "Index")</button>
+        </div>
+    }
+    <form method="post" id="uform">
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" id="create">
+            <h4>瑞亚后台管理用户</h4>
+            <hr />
+            <br>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
+            <div class="form-group">
+                <span>用户名：</span>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @readOnly = "readOnly", @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+        </div>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ruiya.Models.happyFamily.happyFamilyActivity>
+
+@{
+    Layout = "~/Views/Shared/happyfamily_temp2.cshtml";
+}
+<html>
+<head>
+    <style>
+        .page-navi ul li:nth-child(3) {
+            border-bottom: 5px solid #0fb2b7;
+        }
+
+            .page-navi ul li:nth-child(3) a {
+                color: #0fb2b7;
+            }
+
+        .list-inner li {
+            line-height: 30px;
+            padding: 15px 20px;
+            font-size: 17px;
+        }
+
+            .list-inner li:hover {
+                background: #ffffff;
+                border-left: 3px solid #0fb2b7;
+            }
+
+             .list-inner li:nth-child(2n+1){
+                background: #FaFaFa;
+            }
+           .list-inner li:nth-child(2n){
+                background: #F5F5F5;
+            }
+    </style>
+</head>
+<body>
+    <div class="page-info col-lg">
+        <ul class="list-inner">
+            @foreach (var modelitem in Model)
+            {
+                <li>
+                    <a href="/happyfamily/Message?pro=happyfamily&type=activity&index=@Html.DisplayFor(modelItem => modelitem.index)">[活动] @Html.DisplayFor(modelItem => modelitem.title)</a>
+                    <span style="float:right"> @Html.DisplayFor(modelItem => modelitem.createTime)</span>
+                </li>
+            }
+
+        </ul>
+
+    </div>
+</body>
+</html>
+
+
